@@ -1,0 +1,129 @@
+import java.util.Scanner;
+
+public class M02Final {
+   static int test= 0;
+   static int answer=0;
+   static String userInput="";
+   static  int count=0;
+   static  int upperbound=0;
+   static  int lowerbound=0;
+   static  int maxguessCount=0;
+  
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+			//1. 變數宣告
+		String msg="";
+			//2. 變數初始化
+			 count=0;
+			 maxguessCount=8;
+			 upperbound=55;
+			 lowerbound=13;
+			 
+			//3. 主要流程
+			//產生亂數做為解答
+			 answer= (int) (lowerbound+ Math.random()*(upperbound-lowerbound+1));
+			
+			//提示訊息含上下邊界
+			 System.out.println( answer+"please input an integer between "+lowerbound+"~"+upperbound);
+				
+			//讀取玩家輸入
+			 Scanner sc = new Scanner(System.in);
+			 boolean b = false;
+			 for(int i=0;i<maxguessCount &&(!b);i++)
+			 {
+				b= checkanwser(sc.next(),i+1);
+			 }
+			 
+			 if(!b)
+			 {
+				 System.out.println("超出猜測次數"+maxguessCount+"次");
+			 }else
+			 {
+				 System.out.println("Good job");
+			 }	 
+				 
+			 
+			 while(true)
+			 {		
+				 
+				 try{
+					 //轉型&count++
+					 count++;
+					 int tmpanser=Integer.parseInt(sc.next()) ;
+					 if(tmpanser== answer)
+					 {
+						 System.out.println("corrent! "+answer+" Your counts:"+count);
+						 break;
+					 }else 
+					 {
+						 if(tmpanser>answer && tmpanser<=upperbound)
+						 {
+							  upperbound =tmpanser-1;
+							  System.out.println( "youranser:"+tmpanser+" :"+lowerbound+"~"+upperbound +" counts:"+count);
+							 
+						 }
+						 else
+						 {
+							 
+						 }
+						 
+					 } 
+				 
+				
+				 }catch(Exception e)
+				 {
+					 System.out.println("Error input type,please input an integer, your count:"+count);
+					 continue;
+				 }
+			 }
+			 
+			 
+			 
+		 sc.close();
+	}
+
+	
+	public static boolean  checkanwser(String input ,int count)
+	{
+		//TODO checkinput
+		
+		boolean result = false;
+		String msg = "";
+		try{
+			int tmpanser=Integer.parseInt(input);
+		 
+			
+		
+			 if(tmpanser== answer)
+			 {
+				//比對成功,輸出次數與解答
+				 msg="corrent! Your guest count"+count;
+				 result= true;
+			 }else if(tmpanser>answer && tmpanser<=upperbound)
+			 {	 	//比對失敗,調整上下邊界
+				  upperbound =tmpanser-1;
+				  msg = "youranser:"+tmpanser+" :"+lowerbound+"~"+upperbound;
+				  result= false;
+			 }else if(tmpanser<answer && tmpanser>=lowerbound)
+			{
+					 lowerbound =tmpanser+1;
+					 msg = "youranser:"+tmpanser+" :"+lowerbound+"~"+upperbound;
+					  result= false;
+			} else{
+				msg="please input an integer between "+lowerbound+"~"+upperbound;
+				result =false;		
+			}
+		}catch (Exception e)
+		{
+			
+			 System.out.println("Error input type,please input an integer, your count:"+count);
+			 return false;
+		}
+		System.out.println(msg);
+		return result;
+		
+	}
+	
+	
+}

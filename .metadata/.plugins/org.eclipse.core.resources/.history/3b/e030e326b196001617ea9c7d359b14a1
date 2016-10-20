@@ -1,0 +1,12 @@
+
+public class GusetGame {
+	
+	  private int answer=0;
+	  private String userInput="";
+	  private int count=0;
+	  private  int upperbound=0;
+	  private  int lowerbound=0;
+	  private  int maxguessCount=0;
+	
+	
+}

@@ -19,9 +19,7 @@ public class GinaMain {
 		test.aboutArrayList1();
 		test.aboutSet();
 		test.aboutMaps();
-		
-		
-		
+			
 	}
 	
 	

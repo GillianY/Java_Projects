@@ -1,0 +1,29 @@
+
+public class GusetGame {
+	
+	  private int answer=0;
+	  private String userInput="";
+	  private int count=0;
+	  private  int upperbound=0;
+	  private  int lowerbound=0;
+	  private  int maxguessCount=0;
+	  String msg="";
+	
+	
+	
+	
+   public GusetGame( int upperbound, int lowerbound, int maxguessCount) {
+		super();
+		this.upperbound = upperbound;
+		this.lowerbound = lowerbound;
+		this.maxguessCount = maxguessCount;
+		
+		 answer= (int) (lowerbound+ Math.random()*(upperbound-lowerbound+1));
+	}
+	 
+    
+	
+	  
+	  
+	
+}
