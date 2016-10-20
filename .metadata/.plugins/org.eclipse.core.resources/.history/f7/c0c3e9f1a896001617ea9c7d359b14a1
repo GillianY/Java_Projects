@@ -1,0 +1,110 @@
+import java.util.*;
+
+/**
+ * Reg http://www.vogella.com/tutorials/JavaRegularExpressions/article.html
+ * 
+ * review java 
+ * */
+
+public class CollectionsP {
+
+	
+	
+	public CollectionsP() {
+		super();
+		// TODO Auto-generated constructor stub
+	
+	}
+	
+	
+	/*
+	 * about ArrayList
+	 * */
+	public boolean aboutArrayList1()
+	{
+		String msg="\n";
+		ArrayList<String> al = new ArrayList(); 
+		al.add("Gillian");
+		
+		List<Integer> numbers = Arrays.asList(1, 2, 3);
+		List<Integer> collector = new ArrayList<>();
+		collector.add(10);
+		collector.addAll(numbers);
+		collector.size(); // 4
+		
+		for(int i: collector)
+		{
+			msg+="\t"+i;
+		}	
+		System.out.println(msg);
+		return true;
+	}
+	
+	
+	/**
+	 * about List
+	 * */
+	
+	public boolean aboutList()
+	{
+		String msg="\n";
+		List<Integer> numbers =Arrays.asList(10,24,33);
+		
+		//error :ArrayList<Integer> lists = (ArrayList)numbers;
+		String str = "a + b - c * d / e < f > g >= h <= i == j";
+		
+		String[] notops = str.split("\\s*[^a-zA-Z]+\\s*");
+	  	String[]  ops=str.split("\\s*[a-zA-Z]+\\s*"); 
+	  	List<String> lists =Arrays.asList(notops);
+	  	ArrayList<String> as = new ArrayList();  
+	  	
+		as.addAll(lists);
+		for(String a :as)
+		{
+			msg+="\t"+a;
+		}
+		System.out.println(msg);
+		return true;
+	}
+
+	
+	/*
+	public String CollectionToString(Collection <E> test)
+	{
+		
+	}
+	*/
+	
+	
+   
+	public String parseDay(Day day){
+		
+		String msg= "";
+		
+		switch(day)
+		{
+			case SUNDAY:
+				msg= "Sunday is holiday";
+				break;
+			case MONDAY:
+				msg= "MONDAY make me broken";
+				break;
+			case SATURDAY:
+				msg= "it is a good day ";
+				break;
+			default:
+				msg="sing a song";
+				break;	
+		}
+		
+		return msg;
+	}
+	
+	
+	private enum Day {
+	    SUNDAY, MONDAY, TUESDAY, WEDNESDAY, 
+	    THURSDAY, FRIDAY, SATURDAY 
+
+		}
+
+}

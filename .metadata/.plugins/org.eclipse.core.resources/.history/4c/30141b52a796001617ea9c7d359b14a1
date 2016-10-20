@@ -1,0 +1,15 @@
+import java.util.*;
+
+
+public class GinaMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	
+		CollectionP test = new CollectionP();
+		test.aboutList();
+		
+	}
+
+}

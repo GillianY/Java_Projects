@@ -1,0 +1,18 @@
+import java.util.*;
+
+
+public class GinaMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	
+		CollectionsP test = new CollectionsP();
+		//test.aboutList();
+		//test.aboutArrayList1();
+		//test.aboutSet();
+		test.aboutMaps();
+		
+	}
+
+}
